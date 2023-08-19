@@ -1,0 +1,565 @@
+/* This section sets the default box-sizing for all elements and defines custom properties for design */
+
+/* Apply border-box box-sizing to all elements and their pseudo-elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom Properties (variables) for design */
+
+/* Define custom properties for fonts, colors, sizes, etc. */
+:root {
+    --ff-primary: 'Lora', serif;
+    --ff-secondary: 'Roboto Slab', serif;
+
+    --fw-reg: 400;
+    --fw-bold: 700;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #d9585f;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+/* Media query for larger screens */
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* Basic styling for the entire body */
+body {
+    background: rgb(186 164 164);
+    color:  #303030;
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+/* Styling for sections */
+section {
+    padding: 5em 2em;
+}
+
+/* Styling for images */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Strong text styling */
+strong { font-weight: var(--fw-bold) }
+
+/* Focus styling */
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+/* Buttons */
+
+/* Styling for buttons */
+.btn {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+/* Button hover effect */
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Typography */
+
+/* Styling for headings */
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+/* Different font sizes for headings */
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+/* Styling for section titles and subtitles */
+.section__title {
+    margin-bottom: .25em;
+}
+
+/* Styling for introduction section */
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+/* Styling for strong elements within introduction titles */
+.section__title--intro strong {
+    display: block;
+}
+
+/* Styling for section subtitles */
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+/* Styling for specific section subtitles */
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: #eb787e;
+    color: #303030;
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+/* Styling for work section subtitles */
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+/* Header styles */
+
+/* Styling for header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+/* Styling for logo */
+.logo {
+    max-width: 100px;
+}
+
+/* Navigation styles */
+
+/* Styling for navigation */
+.nav {
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+/* Styling for navigation list */
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for navigation links */
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);
+    text-decoration: none;
+}
+
+/* Navigation link hover effect */
+.nav__link:hover {
+    color: var(--clr-accent);
+}
+
+/* Styling for navigation toggle button */
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+/* Navigation open state */
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+/* Navigation toggle button in open state */
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+/* Hamburger menu icon in open state */
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+/* Styling for hamburger lines */
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+/* Hiding middle line in hamburger icon in open state */
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
+/* Styling for hamburger menu icon */
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+/* Styling for hamburger lines */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+/* Positioning hamburger lines */
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+/* Positioning hamburger lines */
+.hamburger::before { top: 6px; }
+.hamburger::after { bottom: 6px; }
+
+
+/*  Intro section  */
+
+/* Styling for introduction section */
+.intro {
+    position: relative;
+}
+
+/* Styling for introduction section image */
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+/* Styling for introduction section subtitle */
+.section__subtitle--intro {
+    display: inline-block;
+}
+
+/* Media query for larger screens within introduction section */
+@media (min-width: 600px) {
+    /* Styling adjustments for larger screens within introduction section */
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+    
+    /* Styling for introduction section image within larger screens */
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }    
+    
+    /* Styling for introduction section subtitle within larger screens */
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+/*  My services section  */
+
+/* Styling for my services section */
+.my-services {
+    background-color: var(--clr-dark);
+    background-image: url(../img/services-bg.jpg);
+    background-size: cover;
+    /* background-blend-mode: multiply; */
+    color: var(--clr-light);
+    text-align: center;
+}
+
+/* Styling for section title in my services section */
+.section__title--services {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+/* Styling for section title underline in my services section */
+.section__title--services::after {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.25;
+}
+
+/* Styling for services section */
+.services {
+    margin-bottom: 4em;
+}
+
+/* Styling for individual service */
+.service {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Styling adjustments for larger screens */
+@media (min-width: 800px) {
+    /* Display services in a row */
+    .services {
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Space between services */
+    .service + .service {
+        margin-left: 2em;
+    }
+}
+
+/* Styling for about me section */
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Styling for about me section image */
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+/* Styling adjustments for larger screens */
+@media (min-width: 600px) {
+    /* Display about me section as grid */
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+    
+    /* Styling for about me section title within larger screens */
+    .section__title--about {
+        grid-area: title;
+    }
+    
+    /* Styling for about me section subtitle within larger screens */
+    .section__subtitle--about {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+    }
+    
+    /* Styling for about me section image within larger screens */
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/* My Work */
+
+/* Styling for my work section */
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+/* Styling for portfolio grid */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Styling for portfolio items */
+.portfolio__item {
+    background: #303030;
+    overflow: hidden;
+}
+
+/* Styling for portfolio item images */
+.portfolio__img {
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1),
+        opacity 250ms linear;
+}
+
+/* Styling for focused portfolio items */
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+/* Portfolio item image hover effect */
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img {
+    transform: scale(1.2);
+    opacity: .5;
+}
+
+/* footer */
+
+/* Styling for footer */
+.footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+/* Styling for footer links */
+.footer a { 
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Styling for footer link */
+.footer__link {
+    font-weight: var(--fw-bold);
+}
+
+/* Footer link hover effect */
+.footer__link:hover,
+.social-list__link:hover {
+    opacity: .7;
+}
+
+/* Footer link underline on hover */
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+/* Styling for social media icon list */
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+/* Styling for social media icon list items */
+.social-list__item {
+    margin: 0 .5em;
+}
+
+/* Styling for social media icon links */
+.social-list__link {
+    padding: .5em;
+}
+
+/* Styling for social media icons */
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+/* Social media icon hover effect */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Styling for individual social media icons */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+/* Individual portfolio item styles */
+
+/* Styling for individual portfolio items */
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Styling for text within individual portfolio items */
+.portfolio-item-individual p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}

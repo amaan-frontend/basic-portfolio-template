@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>"Your name" portfolio website</title>><!--This is what appears on the title of the browser tab , you can simply add you name here -->
+    <link rel="stylesheet" href="style.css"><!--
+edit your styling on this file
+    -->
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+    <!-- Animate CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/style.css/">
+    <!--scroll animation-->
+    
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="" alt=""><!--add image of your logo if you have any-->
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button><!--hamburger buutton for the navbar for phone view and responsive design-->
+        <nav class="nav"><!--navbar and the links to different pages inside of your page-->
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <!--Introduction-->
+    <section class="intro" id="home">
+
+        <h1 class="section--title section__title--intro" data-aos="fade-up" data-aos-anchor=".other-element">
+            Hi , I am <strong>YourName</strong>
+        </h1>
+
+        <p class="section--subtitle section__subtitle--intro" data-aos="fade-up" data-aos-anchor=".other-element">
+            I'm just a cat  <!--you can change your role to whatever you do-->
+        </p>
+        <!--image-->
+        <img src="cat-image-1.jpg" class="intro__img" data-aos="slide-right">
+    </section><!--choose a picture of yours and save it inside of the image folder , add the link of that image inside of the src double quotes-->
+
+ 
+
+    <!--my services-->
+
+    <section class="my-services" id="services" data-aos="slide-left">
+        <h2 class="section--title section__title--services">
+            My skills</h2>
+
+        <div class="services"><!--this is the div for each skill , in case you want to add more skills , you just need to copy the entire div and edit the content accordingly-->
+            <div class="service">
+                <h3 data-aos="slide-right">Skill 1</h3>
+                <p data-aos="slide-right">sample text- Lorem ipsum dolor sit amet consectetur adipisicing elit. A modi mollitia ullam nihil accusantium esse soluta quisquam atque totam numquam quam, placeat provident culpa blanditiis velit! Asperiores amet delectus aspernatur!</p><!--description of the skill-->
+                </p>
+            </div> 
+            
+
+            <div class="service" >
+                <h3 data-aos="slide-right">Skill 2</h3>
+                <p data-aos="slide-right">sample text- Lorem ipsum dolor sit amet consectetur adipisicing elit. A modi mollitia ullam nihil accusantium esse soluta quisquam atque totam numquam quam, placeat provident culpa blanditiis velit! Asperiores amet delectus aspernatur!</p>
+                
+            </div>
+            <!--/service-->
+            <div class="service">
+                <h3 data-aos="slide-left">Skill 3</h3>
+                <p data-aos="slide-left">sample text- Lorem ipsum dolor sit amet consectetur adipisicing elit. A modi mollitia ullam nihil accusantium esse soluta quisquam atque totam numquam quam, placeat provident culpa blanditiis velit! Asperiores amet delectus aspernatur!</p>
+              
+            </div>
+            <!--/service-->
+            <div class="service" data-aos="slide-left">
+                <h3 data-aos="slide-left">Skill 4</h3>
+               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nulla aliquam sunt nemo id. Atque quidem esse deleniti quo iure nesciunt earum cupiditate, ducimus vitae rem officia sit vero commodi.</p>
+            </div>
+        </div>
+        <!--service-->
+        <a href="#work" class="btn">Check out my Work</a>
+    </section>
+   
+    
+    <!-- About me --><!--edit this according to your choice-->
+    <section class="about-me" id="about" data-aos="slide-left">
+        <h2 class="section__title section__title--about">Who I am</h2>
+        <p class="section__subtitle section__subtitle--about">Content writer based in Bhubaneswar</p>
+
+        <div class="about-me__body">
+            <p> A CSE undergraduate and a student of KIIT Bhubaneswar</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt, architecto dolores ab neque officiis culpa ducimus, autem quam molestias suscipit officia ut commodi ipsa quibusdam odit in doloribus eius. Libero similique quaerat neque reprehenderit, magnam doloremque at quas esse delectus nulla molestias adipisci distinctio commodi qui et in non perferendis velit consequuntur! Ullam, alias ipsum inventore est, facilis repellendus deleniti tempore qui unde asperiores facere pariatur expedita repellat maiores officia adipisci temporibus sed quod debitis, excepturi quisquam! Repellendus, nemo hic voluptatem esse eligendi alias necessitatibus consectetur odio ex aperiam voluptatum eos rem consequuntur dolorem neque corporis molestiae! Quos, magnam.</p>
+        </div>
+
+
+        <!--image-->
+        <img src="cat-image-2.jpg" alt="" class="about-me__img">
+    </section><!--add an image of your own-->
+
+    <!-- My Work -->
+    <section class="my-work" id="work" data-aos="slide-right" >
+        <h2 class="section__title section__title--work">My work</h2>
+        <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
+
+        <div class="portfolio" ><!--div for your projects to be showed on my work section . In case you want to add a skill , just copy the div , paste it and edit accordingly-->
+
+            <!-- Portfolio item 01 -->
+            <a href="https://huggingface.co/spaces/fffiloni/Image-to-Story"
+                class="portfolio__item"> <!--link to the project to be added inside the href double quotes , can be anything , your github repo , your medium page , your designs etc-->
+
+                <img height="200px" width="400px"
+                    src="project1.png"
+                    alt="" class="portfolio__img"></a>
+                    <!--change the image or screenshot of the project that you have-->
+
+                    <a href="https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code"
+                class="portfolio__item">
+                <img height="200px" width="400px"
+                    src="project2.png"
+                    alt="" class="portfolio__img"></a>
+
+                    <a href="project.jpg"
+                class="portfolio__item">
+                <img height="200px" width="400px"
+                    src="project.jpg"
+                    alt="" class="portfolio__img"></a>
+
+                    <a href="project.jpg"
+                class="portfolio__item">
+                <img height="200px" width="400px"
+                    src="project.jpg"
+                    alt="" class="portfolio__img"></a>
+
+                    <a href="project.jpg"
+                    class="portfolio__item">
+                    <img height="200px" width="400px"
+                        src="project.jpg"
+                        alt="" class="portfolio__img"></a>
+
+                        
+                        <a href="project.jpg"
+                        class="portfolio__item">
+                        <img height="200px" width="400px"
+                            src="project.jpg"
+                            alt="" class="portfolio__img"></a>
+
+                            
+                            <a href="project.jpg"
+                            class="portfolio__item">
+                            <img height="200px" width="400px"
+                                src="project.jpg"
+                                alt="" class="portfolio__img"></a>
+
+                                <a href="project.jpg"
+                                class="portfolio__item">
+                                <img height="200px" width="400px"
+                                    src="project.jpg"
+                                    alt="" class="portfolio__img"></a>
+            </a>
+        </div>
+    </section>
+
+
+    
+    <footer>
+        <footer class="footer" data-aos="slide-left">
+            <h2>Connect to me on social media</h2>
+            
+            <a href="mailto:2105437@kiit.ac.in" class="footer-link">Email-id:<!--add your email id here --></a>
+            <ul class="social-list__item">
+                <li class="social-list__item"><a class="social-list__link">contact number:<!--add your contact number here , in case you dont want to add your contact number , just remove the particular li tag--></a></li>
+                <li class="social-list__item"><a class="social-list__link"
+                        href="" >Linkedin profile</a></li><!--add the link of your linkedin handle inside the href double quotes-->
+                <li class="social-list__item"><a class="social-list__link"
+                        href="">Instagram Handle</a></li><!--add the link of your instagram inside the href double quotes-->
+                <li class="social-list__item"><a class="social-list__link" href="https://twitter.com/sharma_diyanshi?s=20&t=5oSPzCUJGUUeq99CahOSSQ">Github</a></li><!--add the link of your github inside the href double quotes-->
+            </ul>
+           </footer>
+
+
+
+<!--you can leave this section unedited-->
+
+<!-- Select the navigation toggle button -->
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    
+    // Select all navigation links
+    const navLinks = document.querySelectorAll('.nav__link')
+
+    // Add a click event listener to the navigation toggle button
+    navToggle.addEventListener('click', () => {
+        // Toggle the 'nav-open' class on the body element
+        document.body.classList.toggle('nav-open');
+    });
+
+    // Loop through each navigation link
+    navLinks.forEach(link => {
+        // Add a click event listener to each navigation link
+        link.addEventListener('click', () => {
+            // Remove the 'nav-open' class from the body element
+            document.body.classList.remove('nav-open');
+        })
+    })
+</script>
+
+<!-- Including a script for AOS (Animate On Scroll) library -->
+
+<!-- Include the AOS JavaScript library from a CDN -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<!-- Initialize AOS -->
+<script>
+    // Initialize the AOS library
+    AOS.init();
+</script>
+
+
+
+
+
+</body>
+
+</html>
